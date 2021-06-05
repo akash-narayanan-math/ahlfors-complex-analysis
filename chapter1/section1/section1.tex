@@ -1,0 +1,115 @@
+\documentclass[../../master.tex]{subfiles}
+
+\begin{document}
+\section{The Algebra of Complex Numbers}
+\subsection{Arithmetic Operations}
+
+% Problem 1.1.1
+\begin{problem}
+    Find the values of
+    \[
+        (1 + 2i)^{3}, \quad \frac{5}{-3 + 4i}, \quad \left(\frac{2 + i}{3 - 2i}\right)^{2}, \quad (1 + i)^{n} + (1 - i)^{n}.
+    \]
+\end{problem}
+
+\begin{solution}
+    These are all relatively simple calculations.
+    \begin{align*}
+        (1 + 2i)^3 &= (1 + 2i)(1 + 2i)(1 + 2i) \\
+                  &= (-3 + 4i)(1 + 2i) \\
+                  &= -11 - 2i
+    \end{align*}
+    \begin{align*}
+        \frac{5}{-3 + 4i} &= \frac{5(-3 - 4i)}{(-3 + 4i)(-3 - 4i)} \\
+                          &= \frac{-15 - 20i}{25} \\
+                          &= -\frac{3}{5} - \frac{4}{5}i
+    \end{align*}
+    \begin{align*}
+        \left(\frac{2+i}{3 - 2i}\right)^2 &= \left(\frac{(2+i)(3+2i)}{(3-2i)(3+2i)}\right)^2 \\
+                              &= \left(\frac{4 + 7i}{13}\right)^2 \\
+                              &= \frac{-33 + 56i}{169}
+    \end{align*}
+    For the final calculation, note that the number $a_n = (1 + i)^{n} + (1 - i)^{n}$ is twice the real part of $(1 + i)^{n}$ due to using the conjugate.
+    Furthermore, by Euler's identity we find $(1 + i)^{n} = \sqrt{2}^{n} e^{in\pi/4}$ which has real part $\cos(n\pi/4)$. Thus
+    \[
+        (1 + i)^{n} + (1 - i)^{n} = 2\sqrt{2}^{n} \cos\frac{n\pi}{4}
+    \]
+    Note that this can be shown via modulo arguments but it is far more tedious.
+\end{solution}
+
+% Problem 1.1.2
+\begin{problem}
+    If $z = x + iy$ ($x$ and $y$ real), find the real and imaginary parts of
+    \[
+        z^4, \quad \frac{1}{z}, \quad \frac{z -1}{z + 1}, \quad \frac{1}{z^2}
+    \]
+\end{problem}
+
+\begin{solution}
+    Again, these are just computations.
+    \begin{align*}
+        (x+iy)^4 &= \left((x+iy)(x+iy)\right)^2 \\
+                &= \left((x^2 - y^2) + 2xyi\right)\left((x^2-y^2) + 2xyi\right) \\
+                &= (x^4 - 6x^2y^2 + y^4) + (4x^3y - 4xy^3)i
+    \end{align*}
+    \begin{align*}
+        \frac{1}{x+iy} &= \frac{x - iy}{x^2 + y^2} \\
+                       &= \frac{x}{x^2 + y^2} - \frac{y}{x^2 + y^2}i
+    \end{align*}
+    \begin{align*}
+        \frac{(x-1) + iy}{(x+1) + iy} &= \frac{\left((x-1) + iy\right)\left((x+1) - iy\right)}{\left((x+1) + iy\right)(\left((x+1) - iy\right)} \\
+                                      &= \frac{(x^2 + y^2 - 1) + 2iy}{x^2 + 2x + y^2 +1}
+    \end{align*}
+    \begin{align*}
+        \frac{1}{(x+iy)^2} &= \frac{1}{(x^2 - y^2) + 2xyi} \\
+                           &= \frac{(x^2 - y^2) - 2xyi}{((x^2 - y^2) + 2xyi)((x^2 - y^2) - 2xyi)} \\
+                           &= \frac{(x^2 - y^2) - 2xyi}{x^4 - 2x^2y^2 + y^4}
+    \end{align*}
+\end{solution}
+% Problem 1.1.3
+\begin{problem}
+    Show that
+    \[
+        \left(\frac{-1 \pm i \sqrt{3}}{2}\right)^3 = 1 \quad \text{and} \quad \left(\frac{\pm 1 \pm i \sqrt{3}}{2}\right)^{6} = 1
+    \]
+    for all combinations of signs.
+\end{problem}
+
+\begin{solution}
+    I'll only do one combination for each but it's easy to verify the others.
+    \begin{align*}
+        \left(\frac{-1 + i \sqrt{3}}{2}\right)^{3} &= \left(\frac{-2 - 2i\sqrt{3}}{4}\right) \left(\frac{-1 + i \sqrt{3}}{2}\right) \\
+                                 &= \frac{2 + 6}{8} \\
+                                 &= 1
+    \end{align*}
+    \begin{align*}
+        \left(\frac{-1 + i\sqrt{3}}{2}\right)^{6} &= \left(\left(\frac{-1 +i\sqrt{3}}{2}\right)^{3}\right)^{2} \\
+                                &= 1^2 \\
+                                &= 1
+    \end{align*}
+\end{solution}
+
+\subsection{Square Roots}
+
+% Problem 1.2.1
+\begin{problem}
+    Compute
+    \[
+        \sqrt{i}, \qquad \sqrt{-i}, \qquad \sqrt{1 + i}, \qquad \sqrt{\frac{1 - i\sqrt{3}}{2}}.
+    \]
+\end{problem}
+
+\begin{solution}
+    We find $x^2 = \frac{1}{2} (0 + \sqrt{1}) = \frac{1}{2}$ so $x = \pm \frac{\sqrt{2}}{2}$. 
+    Similarly, $y^2 = \pm \frac{\sqrt{2}}{2}$.
+    With the relation $2xy = 1$, we have a final solution of
+    \[
+        \sqrt{i} = \pm \frac{\sqrt{2}}{2} \pm \frac{\sqrt{2}}{2} i
+    \]
+    
+    We have a similar set of solutions for $\sqrt{-i}$ but now the product $2xy = -1$ so the signs of corresponding solutions are switched. Thus, we have
+    \[
+        \sqrt{-i} = \pm \frac{\sqrt{2}}{2} \mp \frac{\sqrt{2}}{2} i
+    \]
+\end{solution}
+\end{document}
